@@ -41,7 +41,7 @@ app.post('/webhook/', function (req, res) {
             // else sendTextMessage(sender,text)
         }
         if (event.postback) {
-            text = JSON.stringify(event.postback)
+            text = JSON.stringify(event.postback.payload)
             if(text == "request"){
                 // sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
                 // userrequest(sender)
