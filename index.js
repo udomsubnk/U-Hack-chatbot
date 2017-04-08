@@ -96,7 +96,7 @@ function sendGenericMessage(sender) {
                     "image_url": "https://s-media-cache-ak0.pinimg.com/736x/87/e4/6e/87e46e397be2ce9d430126d8b4e5a29f.jpg",
                     "buttons": [{
                         "type": "postback",
-                        "title": "ดูรายจ่าย",
+                        "title": "ดูรายจ่ายเดือนนี้",
                         "payload": "request",
                     },{
                         "type": "postback",
