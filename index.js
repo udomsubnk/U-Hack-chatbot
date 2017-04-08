@@ -53,6 +53,7 @@ app.post('/webhook/', function (req, res) {
             else if(text == "contact"){
                 sendTextMessage(sender, "คุณลูกค้าทิ้งข้อความไว้ได้เลย", token)
             }
+            else sendTextMessage(sender,text)
             continue
         }
     }
