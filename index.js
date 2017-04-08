@@ -77,38 +77,21 @@ function sendGenericMessage(sender) {
             "payload": {
                 "template_type": "generic",
                 "elements": [{
-                    "title": "Ai Chat Bot Communities",
-                    "subtitle": "Communities to Follow",
-                    "image_url": "http://1u88jj3r4db2x4txp44yqfj1.wpengine.netdna-cdn.com/wp-content/uploads/2016/04/chatbot-930x659.jpg",
-                    "buttons": [{
-                        "type": "web_url",
-                        "url": "https://www.facebook.com/groups/aichatbots/",
-                        "title": "FB Chatbot Group"
-                    }, {
-                        "type": "web_url",
-                        "url": "https://www.reddit.com/r/Chat_Bots/",
-                        "title": "Chatbots on Reddit"
-                    },{
-                        "type": "web_url",
-                        "url": "https://twitter.com/aichatbots",
-                        "title": "Chatbots on Twitter"
-                    }],
-                },{
-                    "title": "Learning More",
-                    "subtitle": "Aking the Deep Questions",
-                    "image_url": "http://www.brandknewmag.com/wp-content/uploads/2015/12/cortana.jpg",
+                    "title": "Payment with yours - Chatbot",
+                    "subtitle": "Payment with yours - Chatbot",
+                    "image_url": "https://s-media-cache-ak0.pinimg.com/736x/87/e4/6e/87e46e397be2ce9d430126d8b4e5a29f.jpg",
                     "buttons": [{
                         "type": "postback",
-                        "title": "AIML",
-                        "payload": "Checkout Artificial Intelligence Mark Up Language. Its easier than you think!",
+                        "title": "ดูรายจ่าย",
+                        "payload": "request",
                     },{
                         "type": "postback",
-                        "title": "Machine Learning",
-                        "payload": "Use python to teach your maching in 16D space in 15min",
+                        "title": "ขอคำแนะนำ",
+                        "payload": "recoment",
                     }, {
                         "type": "postback",
-                        "title": "Communities",
-                        "payload": "Online communities & Meetups are the best way to stay ahead of the curve!",
+                        "title": "ติดต่อเรา",
+                        "payload": "contact",
                     }],
                 }]  
             } 
