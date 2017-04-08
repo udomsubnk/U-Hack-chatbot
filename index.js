@@ -41,7 +41,7 @@ app.post('/webhook/', function (req, res) {
             // else sendTextMessage(sender,text)
         }
         if (event.postback) {
-            text = JSON.stringify(event.postback.payload)
+            text = JSON.stringify(event.postback)
             if(text == "request"){
                 // sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
                 // userrequest(sender)
@@ -91,7 +91,7 @@ function sendGenericMessage(sender) {
                 "template_type": "generic",
                 "elements": [{
                     "title": "Payment with yours - Chatbot",
-                    "subtitle": "Payment with yours - Chatbot",
+                    "subtitle": "ใช้จ่ายทุกที่ ด้วยตัวคุณ",
                     "image_url": "https://s-media-cache-ak0.pinimg.com/736x/87/e4/6e/87e46e397be2ce9d430126d8b4e5a29f.jpg",
                     "buttons": [{
                         "type": "postback",
