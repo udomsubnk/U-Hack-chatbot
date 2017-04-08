@@ -35,6 +35,9 @@ app.post('/webhook/', function (req, res) {
                 sendGenericMessage(sender)
             }
             // else sendTextMessage(sender, ""/*start text*/ + text.substring(0, 200))
+            else if(text === 'Postback received: {"payload":"request"}'){
+                userrequest(sender)
+            }
             else sendTextMessage(sender,text)
         }
         if (event.postback) {
@@ -92,6 +95,50 @@ function sendGenericMessage(sender) {
                         "type": "postback",
                         "title": "ติดต่อเรา",
                         "payload": "contact",
+                    }],
+                }]  
+            } 
+        }
+    }
+    request({
+        url: 'https://graph.facebook.com/v2.6/me/messages',
+        qs: {access_token:token},
+        method: 'POST',
+        json: {
+            recipient: {id:sender},
+            message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+            console.log('Error sending messages: ', error)
+        } else if (response.body.error) {
+            console.log('Error: ', response.body.error)
+        }
+    })
+}
+
+function userrequest(sender) {
+    messageData = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [{
+                    "title": "รายจ่าย",
+                    "subtitle": "Payment with yours - Chatbot",
+                    "image_url": "https://s-media-cache-ak0.pinimg.com/736x/87/e4/6e/87e46e397be2ce9d430126d8b4e5a29f.jpg",
+                    "buttons": [{
+                        "type": "postback",
+                        "title": "รายวัน",
+                        "payload": "day",
+                    },{
+                        "type": "postback",
+                        "title": "รายเดือน",
+                        "payload": "month",
+                    }, {
+                        "type": "postback",
+                        "title": "ทั้งหมด",
+                        "payload": "all",
                     }],
                 }]  
             } 
