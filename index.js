@@ -45,7 +45,7 @@ app.post('/webhook/', function (req, res) {
             if(text == '"request"'){
                 // sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
                 // userrequest(sender)
-                sendTextMessage(sender, "ยอดจ่ายเดือนนี้ : 4,595", token)
+                sendTextMessage(sender, "ยอดจ่ายเดือนนี้ : 95", token)
             }
             else if (text == '"recoment"'){
                 sendTextMessage(sender, "ร้านค้ารอบๆที่เหมาะกับคุณ : ร้าน Pet shop", token)
