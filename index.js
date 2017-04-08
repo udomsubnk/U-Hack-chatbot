@@ -35,7 +35,7 @@ app.post('/webhook/', function (req, res) {
                 sendGenericMessage(sender)
             }
             // else sendTextMessage(sender, ""/*start text*/ + text.substring(0, 200))
-            else if(text === 'Postback received: {"payload":"request"}'){
+            else if(event.postback.payload === "request"){
                 userrequest(sender)
             }
             else sendTextMessage(sender,text)
