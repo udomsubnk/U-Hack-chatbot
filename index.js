@@ -42,15 +42,15 @@ app.post('/webhook/', function (req, res) {
         }
         if (event.postback) {
             text = JSON.stringify(event.postback.payload)
-            if(text == "request"){
+            if(text == '"request"'){
                 // sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
                 // userrequest(sender)
                 sendTextMessage(sender, "ยอดจ่ายเดือนนี้ : 4,595", token)
             }
-            else if (text == "recoment"){
+            else if (text == '"recoment"'){
                 sendTextMessage(sender, "ร้านค้ารอบๆที่เหมาะกับคุณ : ร้าน Pet shop", token)
             }
-            else if(text == "contact"){
+            else if(text == '"contact"'){
                 sendTextMessage(sender, "คุณลูกค้าทิ้งข้อความไว้ได้เลย", token)
             }
             else sendTextMessage(sender,text)
